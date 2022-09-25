@@ -4,16 +4,18 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
     die();
 }
 
-use \Bitrix\Main\Localization\Loc;
-use \Bitrix\Main\Page\Asset;
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\SiteTable;
 
 Loc::loadLanguageFile(__FILE__);
-
+$site = \Bitrix\Main\SiteTable::getByID(SITE_ID)->fetch();
+$APPLICATION->SetTitle("Colorlib Balita &mdash; Minimal Blog Template");
 ?>
 <!doctype html>
 <html lang="<?=LANGUAGE_ID?>">
 <head>
-    <title><?$APPLICATION->ShowTitle()?></title>
+    <title><?=$APPLICATION->GetTitle()?></title>
     <?$APPLICATION->ShowHead();?>
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700" rel="stylesheet">
@@ -58,7 +60,7 @@ Loc::loadLanguageFile(__FILE__);
         <div class="row pt-5">
             <div class="col-12 text-center">
                 <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-                <h1 class="site-logo"><a href="index.html">Balita</a></h1>
+                <h1 class="site-logo"><a href="index.html"><?=$site['SITE_NAME']?></a></h1>
             </div>
         </div>
     </div>

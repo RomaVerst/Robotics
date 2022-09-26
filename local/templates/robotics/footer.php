@@ -88,6 +88,7 @@ Loc::loadLanguageFile(__FILE__);
      </div>
     </div>
 </section>
+<?$APPLICATION->ShowViewContent('related_post');?>
 <footer class="site-footer">
     <div class="container">
         <div class="row">

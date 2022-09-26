@@ -2,6 +2,8 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+require_once "get_section_name.php";
+
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -15,7 +17,56 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+    <section class="site-section pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme home-slider">
+                        <div>
+                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_1.jpg'); ">
+                                <div class="text half-to-full">
+                                    <div class="post-meta">
+                                        <span class="category">Lifestyle</span>
+                                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                                    </div>
+                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg'); ">
+                                <div class="text half-to-full">
+                                    <div class="post-meta">
+                                        <span class="category">Lifestyle</span>
+                                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                                    </div>
+                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg'); ">
+                                <div class="text half-to-full">
+                                    <div class="post-meta">
+                                        <span class="category">Lifestyle</span>
+                                        <span class="mr-2">March 15, 2018 </span> &bullet;
+                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                                    </div>
+                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "",
@@ -66,6 +117,8 @@ $this->setFrameMode(true);
         "FILTER_NAME" => $arParams['FILTER_NAME'],
         "HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
         "CHECK_DATES" => $arParams["CHECK_DATES"],
+        "SECTION_NAME" => $arParams['SECTION_NAME'],
+        "USE_FILTER" => $arParams['USE_FILTER'],
     ],
     $component
 );

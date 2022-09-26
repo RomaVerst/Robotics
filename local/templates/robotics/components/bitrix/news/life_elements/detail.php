@@ -2,6 +2,8 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+require_once "get_section_name.php";
+
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -14,10 +16,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-?>
-<?$ElementID = $APPLICATION->IncludeComponent(
+$ElementID = $APPLICATION->IncludeComponent(
     "bitrix:news.detail",
-    "",
+    "category_detail",
     [
         "DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
         "DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
@@ -68,6 +69,9 @@ $this->setFrameMode(true);
         "SHARE_SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
         "ADD_ELEMENT_CHAIN" => (isset($arParams["ADD_ELEMENT_CHAIN"]) ? $arParams["ADD_ELEMENT_CHAIN"] : ''),
         'STRICT_SECTION_CHECK' => (isset($arParams['STRICT_SECTION_CHECK']) ? $arParams['STRICT_SECTION_CHECK'] : ''),
+        "SECTION_NAME" => $arParams['SECTION_NAME'],
+        "USE_FILTER" => $arParams['USE_FILTER'],
+        "FILTER_NAME" =>  $arParams['FILTER_NAME'],
     ],
     $component
 );

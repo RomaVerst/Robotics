@@ -17,56 +17,19 @@ require_once "get_section_name.php";
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-    <section class="site-section pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme home-slider">
-                        <div>
-                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_1.jpg'); ">
-                                <div class="text half-to-full">
-                                    <div class="post-meta">
-                                        <span class="category">Lifestyle</span>
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg'); ">
-                                <div class="text half-to-full">
-                                    <div class="post-meta">
-                                        <span class="category">Lifestyle</span>
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg'); ">
-                                <div class="text half-to-full">
-                                    <div class="post-meta">
-                                        <span class="category">Lifestyle</span>
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                    <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+<?
+$APPLICATION->IncludeComponent('robotics:iblock.getlist', 'carusel', [
+    'SORT' => $arParams["SORT_BY1"],
+    'FILTER' => [
+        'IBLOCK_ID' => $arParams["IBLOCK_ID"],
+        'ACTIVE' => 'Y',
+        'SECTION_ID' => $GLOBALS[$arParams["FILTER_NAME"]]["SECTION_ID"]
+    ],
+    'GROUP_BY' => false,
+    'NAV_PARAMS' => ['nTopCount' => 3],
+    'SELECT' => ['ID', 'NAME', 'PREVIEW_PICTURE', 'DATE_ACTIVE_FROM', 'PREVIEW_TEXT', 'DETAIL_PAGE_URL']
+]);
+?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "",

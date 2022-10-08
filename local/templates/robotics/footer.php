@@ -9,82 +9,30 @@ Use \Bitrix\Main\Localization\Loc;
 Loc::loadLanguageFile(__FILE__);
 
 ?>
+
         <div class="col-md-12 col-lg-4 sidebar">
-            <div class="sidebar-box search-form-wrap">
-                <form action="#" class="search-form">
-                    <div class="form-group">
-                        <span class="icon fa fa-search"></span>
-                        <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
-                    </div>
-                </form>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:main.include","",[
+                  "AREA_FILE_SHOW" => "file",
+                  "PATH" => SITE_DIR . "include/search_input.php"
+              ]);?>
             <!-- END sidebar-box -->
-            <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+            <?$APPLICATION->IncludeComponent("bitrix:main.include","", [
                     "AREA_FILE_SHOW" => "file",
-                    "PATH" => "include/mini_blog.php"
-                )
-            );?>
+                    "PATH" => SITE_DIR . "include/mini_blog.php"
+             ]);?>
             <!-- END sidebar-box -->
-            <div class="sidebar-box">
-                <h3 class="heading">Popular Posts</h3>
-                <div class="post-entry-sidebar">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg" alt="Image placeholder" class="mr-4">
-                                <div class="text">
-                                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                                    <div class="post-meta">
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/images/img_4.jpg" alt="Image placeholder" class="mr-4">
-                                <div class="text">
-                                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                                    <div class="post-meta">
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/images/img_12.jpg" alt="Image placeholder" class="mr-4">
-                                <div class="text">
-                                    <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                                    <div class="post-meta">
-                                        <span class="mr-2">March 15, 2018 </span> &bullet;
-                                        <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:main.include","", [
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => SITE_DIR . "include/popular_posts.php"
+            ]);?>
             <!-- END sidebar-box -->
-
-            <div class="sidebar-box">
-                <h3 class="heading">Categories</h3>
-                <ul class="categories">
-                    <li><a href="#">Courses <span>(12)</span></a></li>
-                    <li><a href="#">News <span>(22)</span></a></li>
-                    <li><a href="#">Design <span>(37)</span></a></li>
-                    <li><a href="#">HTML <span>(42)</span></a></li>
-                    <li><a href="#">Web Development <span>(14)</span></a></li>
-                </ul>
-            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:main.include","", [
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => SITE_DIR . "include/categories.php"
+            ]);?>
             <!-- END sidebar-box -->
-
         </div>
         <!-- END sidebar -->
-
      </div>
     </div>
 </section>

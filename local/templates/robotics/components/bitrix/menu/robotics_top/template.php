@@ -14,7 +14,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                        id="dropdown<?=$key?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$item['TEXT']?></a>
                     <div class="dropdown-menu" aria-labelledby="dropdown<?=$key?>">
                         <? foreach ($item['ITEMS'] as $subItem): ?>
-                        <a class="dropdown-item <?=($item['SELECTED']) ? 'active' : ''?>" href="<?=$subItem['LINK']?>">
+                        <a class="dropdown-item <?=($subItem['SELECTED']) ? 'active' : ''?>" href="<?=$subItem['LINK']?>">
                             <?=$subItem['TEXT']?>
                         </a>
                         <? endforeach; ?>

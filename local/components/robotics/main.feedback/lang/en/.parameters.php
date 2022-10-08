@@ -6,6 +6,7 @@ $MESS ['MFP_EMAIL_TO'] = "Destination E-mail Address";
 $MESS ['MFP_REQUIRED_FIELDS'] = "Required fields";
 $MESS ['MFP_ALL_REQ'] = "(all non-required)";
 $MESS ['MFP_NAME'] = "Name";
+$MESS ['MFP_PHONE'] = "Phone";
 $MESS ['MFP_MESSAGE'] = "Message";
 $MESS ['MFP_EMAIL_TEMPLATES'] = "E-mail Templates";
 ?>

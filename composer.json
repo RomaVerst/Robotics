@@ -1,0 +1,9 @@
+{
+    "name": "app/robotics",
+    "autoload": {
+        "psr-4": {
+            "App\\Robotics\\": "local/src/"
+        }
+    },
+    "require": {}
+}

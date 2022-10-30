@@ -14,7 +14,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 /**
  * Компонент-обертка над CIBlockElement::GetList
- * Пригодится, когда нужно вывести небольшую мелочь, а тянуть для этого news.list не хочется.
  */
 class IblockGetListComponent extends CBitrixComponent
 {

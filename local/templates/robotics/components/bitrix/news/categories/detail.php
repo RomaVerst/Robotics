@@ -82,8 +82,8 @@ $isHideBlockComments = COption::GetOptionInt('main', 'COMMENTS_HIDE_BLOCK');
                 ],
                 $component
             );
-
             if (!$isHideBlockComments) {
+
                 $APPLICATION->IncludeComponent('robotics:form', '', [
                     'ELEMENT_ID' => $elementId,
                     'IBLOCK_ID' => 7,
@@ -93,6 +93,14 @@ $isHideBlockComments = COption::GetOptionInt('main', 'COMMENTS_HIDE_BLOCK');
                     'FIELD_TYPES' => 'text, text, file, textarea',
                     'FIELD_TITLES' => 'Name, City, Avatar, Write Message',
                     'BUTTON_NAME' => 'Send Comment'
+                ]);
+                $APPLICATION->IncludeComponent('robotics:iblock.getlist', '', [
+                    'SORT' =>[ "ID" => COption::GetOptionString('main', 'COMMENTS_SORT')],
+                    'FILTER' => [
+                        'IBLOCK_ID' => 7,
+                        'ACTIVE' => 'Y'
+                    ],
+                    'GROUP_BY' => false,
                 ]);
             }
             ?>

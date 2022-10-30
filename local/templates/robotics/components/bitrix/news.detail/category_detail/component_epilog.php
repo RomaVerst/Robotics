@@ -14,7 +14,7 @@ $this->__template->SetViewTarget('related_post');
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('images/img_2.jpg'); ">
+                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_2.jpg'); ">
                         <div class="text">
                             <div class="post-meta">
                                 <span class="category">Lifestyle</span>
@@ -26,7 +26,7 @@ $this->__template->SetViewTarget('related_post');
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('images/img_3.jpg'); ">
+                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_3.jpg'); ">
                         <div class="text">
                             <div class="post-meta">
                                 <span class="category">Travel</span>
@@ -38,7 +38,7 @@ $this->__template->SetViewTarget('related_post');
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('images/img_4.jpg'); ">
+                    <a href="#" class="a-block d-flex align-items-center height-md" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/img_4.jpg'); ">
                         <div class="text">
                             <div class="post-meta">
                                 <span class="category">Food</span>

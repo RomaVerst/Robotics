@@ -24,8 +24,14 @@ $APPLICATION->SetTitle($arParams['SECTION_NAME']);?>
                             <div class="blog-content-body">
                                 <div class="post-meta">
                                     <span class="category"><?=$arParams['SECTION_NAME']?></span>
-                                    <span class="mr-2"><?=$item['DISPLAY_ACTIVE_FROM']?></span> &bullet;
-                                    <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                                    <span class="mr-2"><?=$item['DISPLAY_ACTIVE_FROM']?></span>
+                                    <? if ($arResult['COMMENTS_COUNT'][$item['ID']]): ?>
+                                        &bullet;
+                                        <span class="ml-2">
+                                                    <span class="fa fa-comments"></span>
+                                                    <?=$arResult['COMMENTS_COUNT'][$item['ID']]?>
+                                                </span>
+                                    <? endif; ?>
                                 </div>
                                 <h2><?=$item['NAME']?></h2>
                             </div>
